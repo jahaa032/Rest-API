@@ -1,7 +1,6 @@
 import requests
 
-url = "http://127.0.0.1:8000"
-response = requests.get(url)
-data = response.json()
+url = "http://192.168.20.90:8000/sitat"
+data = r
 
 print(data["quote"])

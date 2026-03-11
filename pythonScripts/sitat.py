@@ -17,10 +17,13 @@ sitater = {
     10: "It matters not what someone is born, but what they grow to be."
 }
 
-class GetQuote(BaseModel):
+class Quote(BaseModel):
     quote: str
 
-@app.get("/sitat",response_model=GetQuote)
+@app.get("/sitat",response_model=Quote)
 def sitat():
     id = random.randint(1,len(sitater))
     return {"quote":sitater[id]}
+
+@app.post("/sitat",response_model=Quote)
+def add_sitat(data: Quote)
