@@ -26,4 +26,10 @@ def sitat():
     return {"quote":sitater[id]}
 
 @app.post("/sitat",response_model=Quote)
-def add_sitat(data: Quote)
+def add_sitat(data: Quote):
+    new_id= len(sitater) + 1
+    sitater[new_id]=data.quote
+    return{
+        "message":"Nytt sitat opprettet",
+        "id":new_id
+    }
